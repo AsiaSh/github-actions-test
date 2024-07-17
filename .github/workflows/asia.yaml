@@ -1,1 +1,22 @@
+name: asia-workflow
+run-name: ${{ github.actor }} is learning GitHub Actions
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  read-hello-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      - name: install dependencies
+        run: npm install
+      - name: read sayHello file
+        run: node sayHello.js
+      
 
