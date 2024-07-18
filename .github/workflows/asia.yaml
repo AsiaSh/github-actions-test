@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
       - name: install dependencies
-        run: install npm
+        run: npm install
       - name: run the server
         run: node server.js
         env:
