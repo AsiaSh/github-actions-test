@@ -15,14 +15,9 @@ jobs:
         run: node sayHello.js
 
   run-server:
+    needs: run-sayHello
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-      - name: download node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
       - name: install dependencies
         run: npm install
 
