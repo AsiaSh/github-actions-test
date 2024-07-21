@@ -10,6 +10,7 @@ jobs:
 
       - name: Set up SSH
         run: |
+          set -x
           echo "${{ secrets.PRIVATE_KEY }}" | base64 --decode > private_key.pem
           chmod 600 private_key.pem
 
