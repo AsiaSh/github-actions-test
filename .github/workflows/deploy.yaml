@@ -29,6 +29,5 @@ jobs:
       - name: Read private key
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          VAR: ${{ env.VAR1 }}
         run: |
-          echo "Private Key: $VAR"
+          echo '${{ github.event.inputs.environment }}'
