@@ -30,4 +30,4 @@ jobs:
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
-          echo '${{ github.event.inputs.environment }}'
+          echo "${{ inputs.environment }}"
