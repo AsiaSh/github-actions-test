@@ -32,4 +32,4 @@ jobs:
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
-          echo "Private Key: ${{env.VAR1}}"
+          echo "Private Key: $VAR1"
