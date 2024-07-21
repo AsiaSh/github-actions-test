@@ -10,7 +10,7 @@ jobs:
 
       - name: Set up SSH
         run: |
-          echo "${{ secrets.PRIVATE_KEY }}" | base64 --decode > private_key.pem
+          echo ${{ secrets.PRIVATE_KEY }} | base64 --decode > private_key.pem
           chmod 600 private_key.pem
 
       - name: Connect to EC2 instance and update application
