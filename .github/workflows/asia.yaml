@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - master
-      
+
 jobs:
   read-hello-file:
     runs-on: ubuntu-latest
@@ -16,19 +16,3 @@ jobs:
         uses: actions/setup-node@v4
       - name: read sayHello file
         run: node sayHello.js
-  run-server:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-      - name: install dependencies
-        run: npm install
-      - name: run the server
-        run: node server.js
-        env:
-          PORT: 3000
-    
-      
-

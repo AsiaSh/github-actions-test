@@ -10,13 +10,13 @@ jobs:
 
       - name: Set up SSH
         run: |
-          echo ${{ secrets.PRIVATE_KEY }} | base64 --decode > private_key.pem
+          echo "${{ secrets.PRIVATE_KEY }}" | base64 --decode > private_key.pem
           chmod 600 private_key.pem
 
       - name: Connect to EC2 instance and update application
         run: |
           ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
-          echo hello world
+          echo hello
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           EC2_PUBLIC_IP: ${{ secrets.EC2_PUBLIC_IP }}
