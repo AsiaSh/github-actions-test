@@ -26,6 +26,8 @@ jobs:
   read:
     runs-on: ubuntu-latest
     steps:
-      - name: read-private-key
+      - name: Read private key
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
-          echo "${{ secrets.PRIVATE_KEY }}"
+          echo "Private Key: $PRIVATE_KEY"
