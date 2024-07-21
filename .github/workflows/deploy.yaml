@@ -25,11 +25,9 @@ on: [push]
 jobs:
   read:
     runs-on: ubuntu-latest
-    env:
-      VAR1: ${{ vars.VAR1 }}
     steps:
       - name: Read private key
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
-          echo "Private Key: $VAR1"
+          echo "Private Key: ${{ vars.VAR1 }}"
