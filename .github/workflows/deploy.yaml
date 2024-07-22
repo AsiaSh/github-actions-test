@@ -24,11 +24,9 @@ jobs:
           git fetch origin
           git reset --hard origin/master
           git clean -fd
-
           npm install
-
+          sudo kill -9 $(sudo lsof -t -i:5000)
           screen -d -m node server.js
-
           exit
           EOF
       - name: Clean up
