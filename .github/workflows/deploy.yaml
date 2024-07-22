@@ -19,11 +19,9 @@ jobs:
         env:
           EC2_PUBLIC_IP: ${{ secrets.EC2_PUBLIC_IP }}
         run: |
-          ssh -o StrictHostKeyChecking=no -i private_key.pem -t ubuntu@${{ env.EC2_PUBLIC_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i private_key.pem -tt ubuntu@${{ env.EC2_PUBLIC_IP }} << 'EOF'
             echo "Hello from the first SSH session"
-            ssh -o StrictHostKeyChecking=no -i private_key.pem -t ubuntu@${{ env.EC2_PUBLIC_IP }} << 'EOF2'
-              echo "Hello from the nested SSH session"
-            EOF2
+            exit
           EOF
 
       - name: Clean up
