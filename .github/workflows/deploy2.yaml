@@ -1,7 +1,6 @@
 name: Deploy to EC2
 
-on:
-  push: [push]
+on: [push]
 
 jobs:
   deploy:
