@@ -28,4 +28,4 @@ jobs:
     steps:
       - name: read-private-key
         run: |
-          echo "${{ secrets.PRIVATE_KEY }}"
+          echo "${{ env.VAR1 }}"
