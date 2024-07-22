@@ -27,7 +27,7 @@ jobs:
 
           npm install
 
-          screen -dmS node_server_screen node server.js
+          screen -d -m node server.js
 
           exit
           EOF
