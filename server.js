@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.get("/", (req, res) => {
-  res.send("Health check :3");
+  res.send("Health check problem");
 });
 app.listen(PORT, () => {
   console.log(`Server running at Port :${PORT}`);
