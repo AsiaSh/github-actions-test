@@ -23,7 +23,7 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --document-name "AWS-RunShellScript" \
             --targets "Key=instanceids,Values=i-07a9b173f677b146a" \
-            --parameters 'commands=["cd github-actions-test""echo "hi from the sky" &"]' \
+            --parameters 'commands=["cd github-actions-test","echo "hi from the sky" &"]' \
             --query "Command.CommandId" \
             --output text)
 
