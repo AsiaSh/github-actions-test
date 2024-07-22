@@ -27,7 +27,7 @@ jobs:
 
           npm install
 
-          nohup node server.js > /dev/null 2>&1 &
+          screen -dmS node_server_screen node server.js
 
           exit
           EOF
