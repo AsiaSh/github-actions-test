@@ -22,7 +22,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key.pem -tt ubuntu@${{ env.EC2_PUBLIC_IP }} << 'EOF'
             echo "Hello from the first SSH session"
           EOF
-
       - name: Clean up
         run: |
           rm private_key.pem
