@@ -25,6 +25,7 @@ jobs:
       - name: Run command on EC2 instance
         if: success()
         run: |
+          echo cat instance_id.txt
           INSTANCE_ID=$(cat instance_id.txt)
           if [ -z "$INSTANCE_ID" ]; then
             echo "No running instances found."
