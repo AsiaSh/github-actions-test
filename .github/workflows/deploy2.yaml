@@ -28,7 +28,7 @@ jobs:
             --output text)
 
           echo "Command ID: $COMMAND_ID"
-          echo 'Hello Asia!'
+          echo 'Hello Asia!!'
 
       # - name: Check SSM Command Status
       #   run: |
