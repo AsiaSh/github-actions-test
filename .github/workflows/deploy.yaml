@@ -3,7 +3,7 @@ name: SSH Example
 on:
   pull_request:
     branches:
-      - master
+      - release
 
 jobs:
   deploy:
