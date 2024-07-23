@@ -19,15 +19,15 @@ jobs:
 
       - name: Deploy to EC2 using SSM
         run: |
-          # # Run commands on EC2 instance using AWS CLI
-          # COMMAND_ID=$(aws ssm send-command \
-          #   --document-name "AWS-RunShellScript" \
-          #   --targets "Key=instanceids,Values=i-07a9b173f677b146a" \
-          #   --parameters 'commands=["cd github-actions-test"]' \
-          #   --query "Command.CommandId" \
-          #   --output text)
+          # Run commands on EC2 instance using AWS CLI
+          COMMAND_ID=$(aws ssm send-command \
+            --document-name "AWS-RunShellScript" \
+            --targets "Key=instanceids,Values=i-07a9b173f677b146a" \
+            --parameters 'commands=["cd github-actions-test"]' \
+            --query "Command.CommandId" \
+            --output text)
 
-          # echo "Command ID: $COMMAND_ID"
+          echo "Command ID: $COMMAND_ID"
           echo 'Hello Asia!'
 
       # - name: Check SSM Command Status
