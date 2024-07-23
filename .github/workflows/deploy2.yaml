@@ -20,12 +20,11 @@ jobs:
       - name: Describe instances
         id: describe
         run: |
-          aws ec2 describe-instances --filters "Name=tag:Name,Values=YourInstanceTagName" --query "Reservations[].Instances[?State.Name == 'running'].InstanceId[]" --output text > instance_id.txt
+          aws ec2 describe-instances --filters "Name=tag:Name,Values=boule" --query "Reservations[].Instances[?State.Name == 'running'].InstanceId[]" --output text > instance_id.txt
 
       - name: Run command on EC2 instance
         if: success()
         run: |
-          cat instance_id.txt
           INSTANCE_ID=$(cat instance_id.txt)
           if [ -z "$INSTANCE_ID" ]; then
             echo "No running instances found."
